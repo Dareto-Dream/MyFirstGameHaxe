@@ -1,0 +1,53 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+
+# Haxe / Lime / OpenFL
+export/
+bin/
+obj/
+*.n
+*.ndll
+*.hxproj
+.haxelib/
+.haxelib/
+
+# Build outputs
+*.exe
+*.dll
+*.dylib
+*.so
+*.pdb
+*.idb
+*.ilk
+*.lib
+*.a
+*.app
+*.apk
+*.ipa
+*.dmg
+*.msi
+
+# Logs / Temp
+*.log
+*.tmp
+*.bak
+*.old
+
+# Asset pipeline
+Assets/*/converted/
+Assets/*/processed/
+Assets/*/tmp/
+
+# Misc
+*.zip
+*.tar.gz
+*.7z
