@@ -1,12 +1,26 @@
 package;
 
 import flixel.FlxState;
+import flixel.FlxSprite;
 
 class PlayState extends FlxState
 {
+	var sprite:FlxSprite;
 	override public function create()
 	{
 		super.create();
+		sprite = new FlxSprite();
+		sprite.makeGraphic(300, 300, flixel.util.FlxColor.WHITE);
+		for(y in 0 ... 300){
+			for(x in 1 ... 300){
+				if(x%2 == 1 && y%2 == 1)
+					sprite.pixels.setPixel(x, y, 0x0000ff);
+				if(x < 5 || y < 5 || x > 295 || y > 295)
+					sprite.pixels.setPixel(x, y, 0xff0000);
+			}
+		}
+
+		add(sprite);
 	}
 
 	override public function update(elapsed:Float)
