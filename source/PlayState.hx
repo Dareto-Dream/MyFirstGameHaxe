@@ -1,26 +1,20 @@
 package;
 
-import flixel.FlxState;
+import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.FlxState;
+import flixel.text.FlxText;
 
 class PlayState extends FlxState
 {
-	var sprite:FlxSprite;
+	var player:Player;
 	override public function create()
 	{
+		var text = new FlxText(0, 0, 100, "FUCK YOU");
+		add(text);
+		player = new Player(20, 20);
+		add(player);
 		super.create();
-		sprite = new FlxSprite();
-		sprite.makeGraphic(300, 300, flixel.util.FlxColor.WHITE);
-		for(y in 0 ... 300){
-			for(x in 1 ... 300){
-				if(x%2 == 1 && y%2 == 1)
-					sprite.pixels.setPixel(x, y, 0x0000ff);
-				if(x < 5 || y < 5 || x > 295 || y > 295)
-					sprite.pixels.setPixel(x, y, 0xff0000);
-			}
-		}
-
-		add(sprite);
 	}
 
 	override public function update(elapsed:Float)
