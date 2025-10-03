@@ -34,7 +34,35 @@ class Player extends FlxSprite
 
         if (up || down || left || right)
         {
-            
+            var newAngle:Float = 0;
+            if (up)
+            {
+                newAngle = -90;
+                if (left)
+                    newAngle -= 45;
+                else if (right)
+                    newAngle += 45;
+            }
+            else if (down)
+            {
+                newAngle = 90;
+                if (left)
+                    newAngle += 45;
+                else if (right)
+                    newAngle -= 45;
+            }
+            else if (left)
+                newAngle = 180;
+            else if (right)
+                newAngle = 0;
+
+            velocity.setPolarDegrees(SPEED, newAngle);
         }
+    }
+
+    override function update(elapsed:Float)
+    {
+        updateMovement();
+        super.update(elapsed);
     }
 }
